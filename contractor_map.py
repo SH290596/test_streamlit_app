@@ -14,8 +14,11 @@ st.set_page_config(layout="wide")
 
 @st.cache(allow_output_mutation=True)
 def load_data(user_cord):
-    contractors_df = open(r"data\Contractors\final_contractor_df.csv",'r', encoding="utf8")
-    contractors_df = pd.DataFrame(contractors_df)
+    # contractors_df = open(r"data\Contractors\final_contractor_df.csv",'r', encoding="utf8")
+    # contractors_df = pd.DataFrame(contractors_df)
+
+    url = 'https://github.com/SH290596/test_streamlit_app/blob/main/data/final_contractor_df.csv?raw=true'
+    contractors_df = pd.read_csv(url, index_col=0)
 
     # -- Add zero in front of all mobile number
     contractors_df["Mobile"] = contractors_df["Mobile"].apply(
