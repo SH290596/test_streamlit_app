@@ -14,7 +14,9 @@ st.set_page_config(layout="wide")
 
 @st.cache(allow_output_mutation=True)
 def load_data(user_cord):
-    contractors_df = pd.read_csv(r"data\Contractors\final_contractor_df.csv")
+    contractors_df = open(r"data\Contractors\final_contractor_df.csv",'r',
+                encoding="utf8")
+    contractors_df = pd.DataFrame(contractors_df)
 
     # -- Add zero in front of all mobile number
     contractors_df["Mobile"] = contractors_df["Mobile"].apply(
