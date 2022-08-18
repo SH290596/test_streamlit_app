@@ -11,3 +11,4 @@ geopandas==0.11.1
 streamlit==1.11.1
 pydeck==0.7.1
 leafmap==0.10.3
+geopy==2.2.0
