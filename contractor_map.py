@@ -140,6 +140,43 @@ def filter_df_on_chadwicks_approved(df: pd.DataFrame, chadwicks_approved_fil: st
 
 def app():
 
+    # -- Remove bar at top of app
+    hide_decoration_bar_style = """
+    <style>
+        header {visibility: hidden;}
+    </style>
+    """
+    st.markdown(hide_decoration_bar_style, unsafe_allow_html=True)
+
+    # Remove whitespace from the top of the page and sidebar
+    st.markdown(
+        """
+        <style>
+               .css-18e3th9 {
+                    padding-top: 0rem;
+                    padding-bottom: 10rem;
+                    padding-left: 5rem;
+                    padding-right: 5rem;
+                }
+               .css-1d391kg {
+                    padding-top: 3.5rem;
+                    padding-right: 1rem;
+                    padding-bottom: 3.5rem;
+                    padding-left: 1rem;
+                }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    st.markdown('''
+    <style>
+    .stApp [data-testid="stToolbar"]{
+        display:none;
+    }
+    </style>
+    ''', unsafe_allow_html=True)
+
     df_user = load_customer_data()
     user_cord = (df_user.lat[0], df_user.lon[0])
     df = load_data(user_cord)
