@@ -169,13 +169,6 @@ def app():
         unsafe_allow_html=True,
     )
 
-    st.markdown('''
-    <style>
-    .stApp [data-testid="stToolbar"]{
-        display:none;
-    }
-    </style>
-    ''', unsafe_allow_html=True)
 
     df_user = load_customer_data()
     user_cord = (df_user.lat[0], df_user.lon[0])
