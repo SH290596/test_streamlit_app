@@ -62,6 +62,24 @@ def load_data(user_cord):
         columns={"Company/Trading Name": "company_name"}
     )
 
+    ICON_URL_Chadwicks = "https://raw.githubusercontent.com/SH290596/test_streamlit_app/main/Chadwicks_C.png"
+
+    icon_data_Chadwicks = {
+        "url": ICON_URL_Chadwicks,
+        "width": 242,
+        "height": 242,
+        "anchorY": 242,
+    }
+
+    ICON_URL_Chadwicks = "https://raw.githubusercontent.com/SH290596/test_streamlit_app/main/Chadwicks_C.png"
+
+    icon_data_Chadwicks = {
+        "url": ICON_URL_Chadwicks,
+        "width": 242,
+        "height": 242,
+        "anchorY": 242,
+    }
+
     ICON_URL = "https://img.icons8.com/fluency/344/map-pin.png"
 
     icon_data = {
@@ -71,7 +89,9 @@ def load_data(user_cord):
         "anchorY": 242,
     }
 
-    test_contractor_example["icon_data"] = [icon_data] * len(test_contractor_example)
+    test_contractor_example["icon_data"] = np.where(
+        contractors_df["chadwicks_approved"] == True, [icon_data_Chadwicks], [icon_data]
+    )
 
     return test_contractor_example
 
@@ -212,9 +232,9 @@ def app():
             "<style>div.row-widget.stRadio > div{flex-direction:row;}</style>",
             unsafe_allow_html=True,
         )
-        # Create filter for chadwicks approved or not
-        chadwicks_approved_fil = st.select_slider(
-            "Chadwick's Approved Contractor:", ["No", "Yes"], value="Yes"
+         # Create filter for chadwicks approved or not
+        chadwicks_approved_fil = st.radio(
+            label=("Chadwick's Approved Contractor:"), options=("Yes", "No"), index=(0)
         )
 
     # -- Filter dataset based off dropdown selection
