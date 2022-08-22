@@ -62,25 +62,16 @@ def load_data(user_cord):
         columns={"Company/Trading Name": "company_name"}
     )
 
-    ICON_URL_Chadwicks = "https://raw.githubusercontent.com/SH290596/test_streamlit_app/main/Chadwicks_C.png"
+    ICON_URL_CHADWICKS = "https://raw.githubusercontent.com/SH290596/test_streamlit_app/main/Chadwicks_C.png"
 
     icon_data_Chadwicks = {
-        "url": ICON_URL_Chadwicks,
+        "url": ICON_URL_CHADWICKS,
         "width": 242,
         "height": 242,
         "anchorY": 242,
     }
 
-    ICON_URL_Chadwicks = "https://raw.githubusercontent.com/SH290596/test_streamlit_app/main/Chadwicks_C.png"
-
-    icon_data_Chadwicks = {
-        "url": ICON_URL_Chadwicks,
-        "width": 242,
-        "height": 242,
-        "anchorY": 242,
-    }
-
-    ICON_URL = "https://img.icons8.com/fluency/344/map-pin.png"
+    ICON_URL = "https://raw.githubusercontent.com/SH290596/test_streamlit_app/main/icon_green_pin.png"
 
     icon_data = {
         "url": ICON_URL,
