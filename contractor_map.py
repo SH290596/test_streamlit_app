@@ -62,7 +62,7 @@ def load_data(user_cord):
         columns={"Company/Trading Name": "company_name"}
     )
 
-    ICON_URL_CHADWICKS = "https://raw.githubusercontent.com/SH290596/test_streamlit_app/main/chadwicks_logo_circle.png"
+    ICON_URL_CHADWICKS = "https://raw.githubusercontent.com/SH290596/test_streamlit_app/main/Chadwicks_C.png"
 
     icon_data_Chadwicks = {
         "url": ICON_URL_CHADWICKS,
