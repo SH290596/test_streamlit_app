@@ -80,9 +80,11 @@ def load_data(user_cord):
         "anchorY": 242,
     }
 
-    test_contractor_example["icon_data"] = np.where(
-        contractors_df["chadwicks_approved"] == True, [icon_data_Chadwicks], [icon_data]
-    )
+    # test_contractor_example["icon_data"] = np.where(
+    #     contractors_df["chadwicks_approved"] == True, [icon_data_Chadwicks], [icon_data]
+    # )
+
+    test_contractor_example["icon_data"] = [icon_data] * len(test_contractor_example)
 
     return test_contractor_example
 
@@ -224,9 +226,9 @@ def app():
             unsafe_allow_html=True,
         )
          # Create filter for chadwicks approved or not
-        chadwicks_approved_fil = st.radio(
-            label=("Chadwick's Approved Contractor:"), options=("Yes", "No"), index=(0)
-        )
+        # chadwicks_approved_fil = st.radio(
+        #     label=("Chadwick's Approved Contractor:"), options=("Yes", "No"), index=(0)
+        # )
 
     # -- Filter dataset based off dropdown selection
     df_fil = filter_df_on_desired_upgrades(df, measure_dropdown)
@@ -235,7 +237,7 @@ def app():
     df_fil = filter_df_on_distance(df_fil, km_from_home)
 
     # -- Filter dataset based off chadwicks approved or not
-    df_fil = filter_df_on_chadwicks_approved(df_fil, chadwicks_approved_fil)
+    # df_fil = filter_df_on_chadwicks_approved(df_fil, chadwicks_approved_fil)
 
     initial_view_state = pdk.ViewState(
         latitude=53.574449758314195,
