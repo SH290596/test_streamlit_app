@@ -354,15 +354,15 @@ def app():
             unsafe_allow_html=True,
         )
         # Create filter for chadwicks approved or not
-        chadwicks_approved_fil = st.radio(
-            label=("Chadwick's Approved Contractor:"), options=("Yes", "No"), index=(0)
-        )
+        # chadwicks_approved_fil = st.radio(
+        #     label=("Chadwick's Approved Contractor:"), options=("Yes", "No"), index=(0)
+        # )
 
     # -- Filter dataset based off dropdown selection
     df_fil = filter_df_on_distance(df, km_from_home)
 
     # -- Filter dataset based off chadwicks approved or not
-    df_fil = filter_df_on_chadwicks_approved(df_fil, chadwicks_approved_fil)
+    # df_fil = filter_df_on_chadwicks_approved(df_fil, chadwicks_approved_fil)
 
     # -- Copy dataset to filter for closet contractor based on upgrade measure
     df_closet_contractor_for_measure = df_fil.copy(deep=False)
