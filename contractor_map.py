@@ -131,7 +131,7 @@ def load_customer_data(lat, lon):
 def filter_df_on_desired_upgrades(df: pd.DataFrame, measure_list: list):
     # -- Function to check if selected upgradeare in the measure string
     def check_measure_present(all_measure_available: str, selected_upgrades: str):
-        if all(substring in all_measure_available for substring in selected_upgrades):
+        if any(substring in all_measure_available for substring in selected_upgrades):
             return True
         else:
             return False
