@@ -106,11 +106,11 @@ def load_data(user_cord):
     return test_contractor_example
 
 
-def load_customer_data():
+def load_customer_data(lat, lon):
     data = {
         "FullAddress": ["12 Warren Cres, Kevinsfort, Sligo, F91 N6YF"],
-        "lat": [54.2674002],
-        "lon": [-8.5002254],
+        "lat": [lat],
+        "lon": [lon],
     }
     addresses = pd.DataFrame(data)
 
