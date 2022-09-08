@@ -482,7 +482,7 @@ def app():
 
     with col3:
         # -- Closet Contractors For Each Upgrade Measure Table
-        st.subheader("Closet Contractor For Upgrade Measure")
+        st.subheader("Closest Contractor For Upgrade Measure")
 
         df_closet_contractor_for_measure_fil_final = (
             df_closet_contractor_for_measure_fil[
