@@ -513,7 +513,7 @@ def app():
         st.dataframe(df_closet_contractor_for_measure_fil_final.style.format(mapper))
 
         # -- Closet Contractors that carry out all upgrades
-        st.subheader("Contractors Closet To You")
+        st.subheader("Contractors closest To You")
 
         df_closet_contractors = df_fil[
             ["company_name", "km_from_you", "full_address_google", "Mobile", "Measure"]
