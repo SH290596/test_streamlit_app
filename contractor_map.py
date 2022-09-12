@@ -330,10 +330,10 @@ def app():
     # -- Get pre selected measures
     pre_measure_selection = list(measure_list[i] for i in pre_measure_selection)
 
-    st.markdown(
-        "<h1 style='text-align: center; color: Black;'>Find A Contractor</h1>",
-        unsafe_allow_html=True,
-    )
+    # st.markdown(
+    #     "<h1 style='text-align: center; color: Black;'>Find A Contractor</h1>",
+    #     unsafe_allow_html=True,
+    # )
 
     col1, col2, col3 = st.columns([2, 4, 4])
 
